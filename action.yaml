@@ -1,0 +1,13 @@
+name: devops
+inputs:
+  myvar:
+    description: myvar
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: echo "myvar=${{ inputs.myvar }}" >> $GITHUB_ENV
+      shell: bash
+    - run: echo "myvar is $myvar"
+      shell: bash
+      
